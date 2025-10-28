@@ -160,7 +160,10 @@
           <div ref="umkmContainer" class="flex overflow-x-auto pb-6 hide-scrollbar snap-x snap-mandatory scroll-smooth">
             <div v-for="(pelaku, index) in pelakuUMKM" :key="index" 
                  class="flex-shrink-0 w-full sm:w-1/2 lg:w-1/3 xl:w-1/4 px-4 snap-start fade-in-section">
-              <div class="bg-white rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-700 transform hover:-translate-y-3 hover:scale-[1.02] h-[500px] flex flex-col border border-gray-100/50 group relative before:absolute before:inset-0 before:bg-gradient-to-r before:from-transparent before:via-white/30 before:to-transparent before:translate-x-[-100%] before:animate-[shimmer_2s_infinite] hover:before:animate-none hover:ring-2 hover:ring-natural-green-300/50">
+              <div
+  class="relative bg-white rounded-3xl overflow-hidden shadow-md hover:shadow-xl transition-all duration-700 transform hover:-translate-y-3 hover:scale-[1.02] h-[500px] flex flex-col border border-gray-100/40 group 
+  before:absolute before:inset-0 before:bg-gradient-to-r before:from-transparent before:via-white/30 before:to-transparent before:translate-x-[-100%] before:animate-[shimmer_2s_infinite] 
+  hover:before:animate-none hover:ring-1 hover:ring-natural-green-300/50 hover:shadow-natural-green-200/40">
                 <div class="relative overflow-hidden h-80 bg-gradient-to-br from-gray-100 to-gray-200">
                   <img :src="pelaku.foto" :alt="pelaku.nama" class="w-full h-full object-cover object-center transition-all duration-700 hover:scale-110 group-hover:rotate-1">
                   <div class="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-all duration-500"></div>
@@ -305,7 +308,11 @@
           <div ref="productsContainer" class="flex overflow-x-auto pb-6 hide-scrollbar snap-x snap-mandatory scroll-smooth">
             <div v-for="(product, index) in featuredProducts" :key="index" 
                  class="flex-shrink-0 w-full sm:w-1/2 lg:w-1/3 px-4 snap-start fade-in-section">
-              <div class="group relative bg-white rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-700 transform hover:-translate-y-3 hover:scale-[1.02] h-[480px] flex flex-col border border-gray-100/50 overflow-hidden before:absolute before:inset-0 before:bg-gradient-to-r before:from-transparent before:via-white/30 before:to-transparent before:translate-x-[-100%] before:animate-[shimmer_2s_infinite] hover:before:animate-none hover:ring-2 hover:ring-natural-green-300/50">
+              <div
+  class="group relative bg-white rounded-3xl overflow-hidden shadow-md hover:shadow-xl transition-all duration-700 transform hover:-translate-y-3 hover:scale-[1.02] h-[480px] flex flex-col border border-gray-100/40 
+  before:absolute before:inset-0 before:bg-gradient-to-r before:from-transparent before:via-white/30 before:to-transparent before:translate-x-[-100%] before:animate-[shimmer_2s_infinite] 
+  hover:before:animate-none hover:ring-1 hover:ring-natural-green-300/50 hover:shadow-natural-green-200/40">
+
                 <!-- Product Image with Overlay -->
                 <div class="relative overflow-hidden h-80 bg-gradient-to-br from-gray-100 to-gray-200">
                   <img :src="product.imageSrc" :alt="product.imageAlt" 
@@ -666,6 +673,22 @@ export default {
           origin: 'Ayam Goreng Kampung Mbak Endang',
           imageSrc: '/src/assets/img/AyamGorengKampung.png',
           imageAlt: 'Ayam Goreng Kampung'
+        },
+        {
+          name: 'Gula Aren Organik',
+          description: 'Gula aren organik yang diolah secara tradisional.',
+          price: 'Rp 65.000',
+          origin: 'Tani Aren Juron',
+          imageSrc: 'https://images.unsplash.com/photo-1509281373149-e957c6296406?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1169&q=80',
+          imageAlt: 'Gula Aren'
+        },
+        {
+          name: 'Gula Aren Organik',
+          description: 'Gula aren organik yang diolah secara tradisional.',
+          price: 'Rp 65.000',
+          origin: 'Tani Aren Juron',
+          imageSrc: 'https://images.unsplash.com/photo-1509281373149-e957c6296406?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1169&q=80',
+          imageAlt: 'Gula Aren'
         },
         {
           name: 'Gula Aren Organik',
