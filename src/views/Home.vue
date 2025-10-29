@@ -20,7 +20,7 @@
           <h1 class="text-xl sm:text-2xl md:text-3xl lg:text-4xl xl:text-5xl 2xl:text-6xl font-bold mb-1 sm:mb-4 text-transparent bg-clip-text bg-gradient-to-r from-wood-brown-800 to-natural-green-700 leading-relaxed py-1 inline-block">
             Tingkatkan Ekonomi Desa Juron Melalui Digitalisasi Produk UMKM
           </h1>
-          <p class="text-xs sm:text-sm md:text-base lg:text-lg xl:text-xl text-wood-brown-800 mb-2 sm:mb-8 font-medium leading-relaxed">
+          <p class="text-xs sm:text-sm md:text-base lg:text-lg xl:text-xl text-wood-brown-800 mb-6 sm:mb-8 font-medium leading-relaxed">
             Melalui penerapan digitalisasi produk UMKM, Desa Juron berupaya memperkenalkan potensi dan produk lokal secara modern agar lebih dikenal luas, sekaligus mendorong kemandirian ekonomi masyarakat di era teknologi.
           </p>
           <div class="flex flex-col sm:flex-row gap-2 sm:gap-3 md:gap-4">
@@ -451,11 +451,11 @@
                 <p class="text-wood-brown-600 text-center mb-8 text-base leading-relaxed">Isi formulir online untuk mendaftarkan produk UMKM Anda ke etalase digital Desa Juron</p>
                 
                 <a href="https://forms.gle/1CvT5GyMpVvGc6278" 
-                   class="btn-primary text-lg px-6 py-3 rounded-lg bg-gradient-to-r from-natural-green-600 to-natural-green-700 text-white font-medium shadow-lg transform transition-all duration-300 hover:scale-105 hover:shadow-natural-green-500/30 hover:shadow-xl flex items-center justify-center">
-                  <svg class="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                   class="btn-primary text-base sm:text-lg px-4 sm:px-6 py-3 rounded-lg bg-gradient-to-r from-natural-green-600 to-natural-green-700 text-white font-medium shadow-lg transform transition-all duration-300 hover:scale-105 hover:shadow-natural-green-500/30 hover:shadow-xl flex items-center justify-center whitespace-nowrap">
+                  <svg class="w-4 h-4 sm:w-5 sm:h-5 mr-2 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M16 11V7a4 4 0 00-8 0v4M5 9h14l1 12H4L5 9z" />
                   </svg>
-                  Isi Formulir Pendaftaran
+                  <span class="truncate">Isi Formulir Pendaftaran</span>
                 </a>
               </div>
             </div>
