@@ -415,13 +415,11 @@
                 <p class="text-wood-brown-600 text-center mb-8 text-base leading-relaxed">Isi formulir online untuk mendaftarkan produk UMKM Anda ke etalase digital Desa Juron</p>
                 
                 <a href="https://forms.gle/1CvT5GyMpVvGc6278" 
-                   class="block w-full py-3 px-4 text-center font-semibold text-base text-white bg-gradient-to-r from-natural-green-600 to-natural-green-700 rounded-lg shadow-md hover:from-natural-green-700 hover:to-natural-green-800 focus:outline-none focus:ring-2 focus:ring-natural-green-500 focus:ring-offset-2 transform transition hover:-translate-y-0.5 hover:shadow-lg">
-                  <span class="flex items-center justify-center">
-                    <svg class="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6v6m0 0v6m0-6h6m-6 0H6"></path>
-                    </svg>
-                    Isi Formulir Pendaftaran
-                  </span>
+                   class="btn-primary text-lg px-6 py-3 rounded-lg bg-gradient-to-r from-natural-green-600 to-natural-green-700 text-white font-medium shadow-lg transform transition-all duration-300 hover:scale-105 hover:shadow-natural-green-500/30 hover:shadow-xl flex items-center justify-center">
+                  <svg class="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M16 11V7a4 4 0 00-8 0v4M5 9h14l1 12H4L5 9z" />
+                  </svg>
+                  Isi Formulir Pendaftaran
                 </a>
               </div>
             </div>

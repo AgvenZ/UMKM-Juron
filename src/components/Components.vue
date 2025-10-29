@@ -22,7 +22,7 @@
             <a v-for="(item, index) in navItems" :key="index" 
                :href="item.href" 
                class="text-wood-brown-700 hover:text-natural-green-600 transition-colors duration-300 font-medium text-xs lg:text-sm xl:text-base 2xl:text-base"
-               :class="{ 'text-natural-green-600 font-semibold': activeSection === item.id }"
+               :class="[{ 'text-natural-green-600': activeSection === item.id }, activeSection === item.id ? '!font-bold' : 'font-medium']"
                @click="setActiveSection(item.id)">
               {{ item.name }}
             </a>
@@ -35,7 +35,7 @@
           <a v-for="(item, index) in navItems" :key="index" 
              :href="item.href" 
              class="block text-wood-brown-700 hover:text-natural-green-600 transition-colors duration-300 font-medium py-2"
-             :class="{ 'text-natural-green-600 font-semibold': activeSection === item.id }"
+             :class="{ 'text-natural-green-600 !font-bold': activeSection === item.id }"
              @click="setActiveSection(item.id)">
             {{ item.name }}
           </a>
