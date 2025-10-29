@@ -17,7 +17,7 @@
       
       <div class="container-custom relative z-10 px-4 sm:px-6 lg:px-8 pt-16 sm:pt-20 lg:pt-24">
         <div class="max-w-4xl backdrop-blur-sm bg-white/10 p-4 sm:p-6 md:p-8 rounded-2xl shadow-lg border border-white/20 mx-auto">
-          <h1 class="text-xl sm:text-2xl md:text-3xl lg:text-4xl xl:text-5xl 2xl:text-6xl font-bold mb-4 sm:mb-6 text-transparent bg-clip-text bg-gradient-to-r from-wood-brown-800 to-natural-green-700 leading-tight">
+          <h1 class="text-xl sm:text-2xl md:text-3xl lg:text-4xl xl:text-5xl 2xl:text-6xl font-bold mb-4 sm:mb-1 text-transparent bg-clip-text bg-gradient-to-r from-wood-brown-800 to-natural-green-700 leading-relaxed py-2 inline-block">
             Tingkatkan Ekonomi Desa Juron Melalui Digitalisasi Produk UMKM
           </h1>
           <p class="text-xs sm:text-sm md:text-base lg:text-lg xl:text-xl text-wood-brown-800 mb-6 sm:mb-8 font-medium leading-relaxed">
