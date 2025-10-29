@@ -71,7 +71,7 @@
             <div class="relative rounded-2xl overflow-hidden shadow-xl group">
               <img src="https://images.unsplash.com/photo-1464638681273-0962e9b53566?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80" 
                    alt="Aktivitas masyarakat desa" 
-                   class="w-full h-64 sm:h-80 md:h-[500px] object-cover object-center transform transition-transform duration-700 group-hover:scale-110">
+                   class="w-full h-64 sm:h-80 md:h-[500px] object-cover object-top transform transition-transform duration-700 group-hover:scale-110">
               <div class="absolute inset-0 bg-gradient-to-t from-wood-brown-900/70 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end p-6">
                 <p class="text-white font-medium">Desa Juron, Kecamatan Nguter, Kabupaten Sukoharjo, Jawa Tengah</p>
               </div>
@@ -161,36 +161,49 @@
             <div v-for="(pelaku, index) in pelakuUMKM" :key="index" 
                  class="flex-shrink-0 w-full sm:w-1/2 lg:w-1/3 px-2 sm:px-4 snap-start fade-in-section">
               <div
-  class="group relative bg-white rounded-2xl sm:rounded-3xl overflow-hidden shadow-md hover:shadow-xl transition-all duration-700 transform hover:-translate-y-2 sm:hover:-translate-y-3 hover:scale-[1.02] h-[380px] sm:h-[440px] flex flex-col border border-gray-100/40 
-  before:absolute before:inset-0 before:bg-gradient-to-r before:from-transparent before:via-white/30 before:to-transparent before:translate-x-[-100%] before:animate-[shimmer_2s_infinite] 
-  hover:before:animate-none hover:ring-1 hover:ring-natural-green-300/50 hover:shadow-natural-green-200/40">
+  class="group relative bg-gradient-to-br from-white to-cream-50 rounded-2xl sm:rounded-3xl overflow-hidden shadow-lg hover:shadow-xl transition-all duration-500 transform hover:-translate-y-3 sm:hover:-translate-y-4 hover:scale-[1.03] h-[380px] sm:h-[420px] flex flex-col border border-white/20 hover:border-natural-green-200 backdrop-blur-sm animate-in fade-in-0 zoom-in-95">
                 
-                <!-- Pelaku Image with Overlay - Diperbaiki agar tidak terpotong -->
-                <div class="relative overflow-hidden h-40 sm:h-48 md:h-52 bg-gradient-to-br from-gray-100 to-gray-200">
+                <!-- Pelaku Image with Modern Overlay -->
+                <div class="relative overflow-hidden h-44 sm:h-52 md:h-56 bg-gradient-to-br from-gray-50 to-gray-100">
                   <img :src="pelaku.foto" :alt="pelaku.nama" 
-                       class="w-full h-full object-contain object-center transition-all duration-700 hover:scale-110 group-hover:rotate-1 bg-gray-50">
-                  <div class="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-all duration-500"></div>
-                  <div class="absolute inset-0 bg-gradient-to-r from-transparent via-white/10 to-transparent -translate-x-full group-hover:translate-x-full transition-transform duration-1000"></div>
+                       class="w-full h-full object-cover object-top transition-all duration-500 hover:scale-110 group-hover:rotate-1">
                   
-                  <!-- Jenis Usaha di kanan atas -->
-                  <div class="absolute top-2 sm:top-4 right-2 sm:right-4">
-                    <span class="inline-flex items-center px-2 sm:px-3 py-0.5 sm:py-1 rounded-full text-xs font-semibold bg-gradient-to-r from-natural-green-100 to-natural-green-200 text-natural-green-800 border border-natural-green-300/50 shadow-sm hover:shadow-lg hover:shadow-natural-green-300/50 transition-all duration-300 backdrop-blur-sm">
-                      {{ pelaku.jenisUsaha.split('&')[0].trim() }}
-                    </span>
-                  </div>
+                  <!-- Gradient Overlay -->
+                  <div class="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-all duration-500"></div>
+                  
+                  <!-- Shimmer Effect -->
+                    <div class="absolute inset-0 bg-gradient-to-r from-transparent via-white/40 to-transparent -translate-x-full group-hover:translate-x-full transition-transform duration-1000 animate-pulse"></div>
                 </div>
                 
                 <!-- Pelaku Info -->
-                <div class="p-3 sm:p-4 flex-grow flex flex-col justify-between">
-                  <div class="space-y-1 sm:space-y-2 mb-2 sm:mb-3">
-                    <h3 class="text-base sm:text-lg font-bold text-wood-brown-800 group-hover:text-natural-green-700 transition-all duration-300 line-clamp-2 leading-tight transform group-hover:scale-105">{{ pelaku.nama.split('(')[0].trim() }}</h3>
-                    <p class="text-wood-brown-600 text-xs sm:text-sm line-clamp-3 leading-relaxed">{{ pelaku.usaha }}</p>
+                <div class="p-5 sm:p-6 flex-grow flex flex-col justify-between">
+                  <div class="space-y-3 mb-3 sm:mb-4">
+                    <h3 class="text-lg sm:text-xl font-bold text-gray-900 group-hover:text-natural-green-600 transition-all duration-300 line-clamp-2 leading-tight transform group-hover:translate-x-2 bg-gradient-to-r from-gray-900 to-gray-700 bg-clip-text group-hover:from-natural-green-600 group-hover:to-natural-green-700">{{ pelaku.nama.split('(')[0].trim() }}</h3>
+                    
+                    <!-- Badges Container - Dipindahkan ke dalam card -->
+                    <div class="flex flex-wrap gap-2">
+                      <!-- WhatsApp Business Badge -->
+                      <span class="inline-flex items-center px-2.5 py-1 rounded-full text-xs font-bold bg-gradient-to-r from-green-500 to-green-600 text-white shadow-lg transform hover:scale-105 transition-all duration-300 backdrop-blur-sm border border-white/20">
+                        <svg class="w-3 h-3 mr-1" fill="currentColor" viewBox="0 0 24 24">
+                          <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/>
+                          <path d="M12 0C5.373 0 0 5.373 0 12s5.373 12 12 12 12-5.373 12-12S18.627 0 12 0zm0 22c-5.523 0-10-4.477-10-10S6.477 2 12 2s10 4.477 10 10-4.477 10-10 10z"/>
+                        </svg>
+                        WhatsApp Business
+                      </span>
+                      
+                      <!-- Jenis Usaha Badge -->
+                      <span class="inline-flex items-center px-2.5 py-1 rounded-full text-xs font-bold bg-gradient-to-r from-natural-green-400 to-natural-green-500 text-white shadow-lg transform hover:scale-105 transition-all duration-300 backdrop-blur-sm border border-white/20">
+                        {{ pelaku.jenisUsaha.split('&')[0].trim() }}
+                      </span>
+                    </div>
+                    
+                    <p class="text-gray-600 text-sm line-clamp-3 leading-relaxed bg-gradient-to-b from-gray-600 to-gray-500 bg-clip-text">{{ pelaku.usaha }}</p>
                   </div>
                   
                   <!-- Lihat Profil Button -->
-                  <button @click="showModal(pelaku)" class="w-full inline-flex items-center justify-center px-3 sm:px-4 py-2 sm:py-2.5 bg-gradient-to-r from-wood-brown-600 via-wood-brown-700 to-wood-brown-800 text-white rounded-lg sm:rounded-xl hover:from-wood-brown-700 hover:via-wood-brown-800 hover:to-wood-brown-900 transition-all duration-500 shadow-lg hover:shadow-xl transform hover:-translate-y-0.5 sm:hover:-translate-y-1 font-semibold text-xs sm:text-sm relative overflow-hidden group">
-                    <span class="absolute inset-0 bg-gradient-to-r from-transparent via-white/20 to-transparent -translate-x-full group-hover:translate-x-full transition-transform duration-1000"></span>
-                    <svg class="w-3 h-3 sm:w-4 sm:h-4 mr-1 sm:mr-2 relative z-10" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <button @click="showModal(pelaku)" class="w-full inline-flex items-center justify-center px-4 sm:px-5 py-3 bg-gradient-to-r from-natural-green-500 via-natural-green-600 to-natural-green-700 text-white rounded-xl sm:rounded-2xl hover:from-natural-green-600 hover:via-natural-green-700 hover:to-natural-green-800 transition-all duration-300 shadow-xl hover:shadow-2xl transform hover:-translate-y-1 font-bold text-sm relative overflow-hidden group">
+                    <span class="absolute inset-0 bg-gradient-to-r from-transparent via-white/30 to-transparent -translate-x-full group-hover:translate-x-full transition-transform duration-700"></span>
+                    <svg class="w-4 h-4 sm:w-5 sm:h-5 mr-2 relative z-10" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                       <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" />
                       <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z" />
                     </svg>
@@ -213,67 +226,93 @@
 
     <!-- Modal Profil -->
       <div v-if="selectedPelaku" class="fixed inset-0 z-50 flex items-center justify-center p-2 sm:p-4">
-        <!-- Backdrop with blur effect -->
-        <div class="absolute inset-0 bg-wood-brown-900/70 backdrop-blur-sm" @click="closeModal"></div>
+        <!-- Backdrop with advanced blur effect -->
+        <div class="absolute inset-0 bg-black/60 backdrop-blur-md" @click="closeModal"></div>
         
         <!-- Modal Container -->
-        <div class="relative bg-white rounded-xl sm:rounded-2xl max-w-2xl lg:max-w-3xl w-full max-h-[95vh] sm:max-h-[90vh] overflow-y-auto shadow-2xl border border-white/20">
-          <!-- Header with gradient - Diperkecil -->
-          <div class="bg-gradient-to-r from-wood-brown-700 to-natural-green-700 rounded-t-lg sm:rounded-t-xl py-2 sm:py-3 px-3 sm:px-4 flex justify-between items-center">
-            <h2 class="text-sm sm:text-base font-bold text-white">Profil UMKM</h2>
-            <button @click="closeModal" class="text-white hover:text-cream-200 transition-colors duration-300 bg-white/10 rounded-full p-1.5 sm:p-2 hover:bg-white/20 flex items-center justify-center">
+        <div class="relative bg-gradient-to-br from-white to-cream-50 rounded-2xl sm:rounded-3xl max-w-2xl lg:max-w-3xl w-full max-h-[95vh] sm:max-h-[90vh] overflow-y-auto shadow-2xl border border-white/30 backdrop-blur-sm transform transition-all duration-500 scale-95 animate-in fade-in-0 zoom-in-95">
+          <!-- Header with premium gradient -->
+          <div class="bg-gradient-to-r from-natural-green-600 via-natural-green-700 to-natural-green-800 rounded-t-2xl sm:rounded-t-3xl py-4 sm:py-5 px-4 sm:px-6 flex justify-between items-center">
+            <h2 class="text-lg sm:text-xl font-bold text-white flex items-center">
+              <svg class="w-5 h-5 sm:w-6 sm:h-6 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z" />
+              </svg>
+              Profil UMKM
+            </h2>
+            <button @click="closeModal" class="text-white hover:text-cream-200 transition-all duration-300 bg-white/20 rounded-full p-2 sm:p-2.5 hover:bg-white/30 flex items-center justify-center transform hover:scale-110 hover:rotate-90">
               <svg class="h-4 w-4 sm:h-5 sm:w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
               </svg>
             </button>
           </div>
           
-          <div class="p-3 sm:p-4 md:p-5">
-            <div class="flex flex-col gap-3 sm:gap-4">
-              <!-- Image container with hover effect - Diperbesar -->
-              <div class="w-full rounded-lg overflow-hidden shadow-md group relative bg-gray-50 h-48 sm:h-64 md:h-72">
-                <img :src="selectedPelaku.foto" :alt="selectedPelaku.nama" class="w-full h-full object-contain transition-transform duration-500 group-hover:scale-105 bg-gray-50">
-                <div class="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+          <div class="p-4 sm:p-5 md:p-6">
+            <div class="flex flex-col gap-4 sm:gap-6">
+              <!-- Image container with premium hover effect -->
+              <div class="w-full rounded-2xl overflow-hidden shadow-xl group relative bg-gradient-to-br from-gray-50 to-gray-100 h-56 sm:h-72 md:h-80">
+                <img :src="selectedPelaku.foto" :alt="selectedPelaku.nama" class="w-full h-full object-cover transition-all duration-500 group-hover:scale-110">
+                <div class="absolute inset-0 bg-gradient-to-t from-black/70 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-all duration-500"></div>
+                
+                <!-- WhatsApp Business Badge and Business Name in Modal -->
+                <div class="absolute bottom-4 sm:bottom-6 left-4 sm:left-6 right-4 sm:right-6">
+                  <div class="flex items-end justify-between">
+                    <div class="bg-gradient-to-r from-black/70 to-black/50 backdrop-blur-sm rounded-xl p-3 sm:p-4 border border-white/20">
+                      <h3 class="text-lg sm:text-xl font-bold text-white leading-tight">{{ selectedPelaku.nama.split('(')[0].trim() }}</h3>
+                      <p class="text-white/90 text-sm sm:text-base">{{ selectedPelaku.usaha }}</p>
+                    </div>
+                    <span class="inline-flex items-center px-3 py-1.5 rounded-full text-sm font-bold bg-gradient-to-r from-green-500 to-green-600 text-white shadow-xl transform hover:scale-105 transition-all duration-300 backdrop-blur-sm border border-white/30">
+                      <svg class="w-4 h-4 mr-2" fill="currentColor" viewBox="0 0 24 24">
+                        <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/>
+                        <path d="M12 0C5.373 0 0 5.373 0 12s5.373 12 12 12 12-5.373 12-12S18.627 0 12 0zm0 22c-5.523 0-10-4.477-10-10S6.477 2 12 2s10 4.477 10 10-4.477 10-10 10z"/>
+                      </svg>
+                      WhatsApp Business
+                    </span>
+                  </div>
+                </div>
               </div>
               
-              <!-- Business details - Dirapikan -->
-              <div class="flex-1">
-                <div class="mb-2 sm:mb-3">
-                  <h3 class="text-base sm:text-lg font-bold text-wood-brown-800 mb-0.5">{{ selectedPelaku.nama.split('(')[0].trim() }}</h3>
-                  <p class="text-xs sm:text-sm text-wood-brown-600 mb-1">{{ selectedPelaku.usaha }}</p>
-                  <!-- Jenis usaha dikembalikan ke posisi awal -->
-                  <span class="inline-flex items-center px-2 py-0.5 rounded-full text-xs font-medium bg-natural-green-100 text-natural-green-800">
-                    {{ selectedPelaku.jenisUsaha.split('&')[0].trim() }}
-                  </span>
+              <!-- Business details with premium styling -->
+              <div class="flex-1 space-y-4 sm:space-y-5">
+                <div class="space-y-3">
+                  <!-- Jenis usaha removed -->
                 </div>
                 
-                <!-- Description - Dirapikan -->
-                <div class="bg-cream-50 p-2 sm:p-3 rounded-lg mb-3 sm:mb-4 border border-cream-200">
-                  <p class="text-wood-brown-700 text-justify leading-relaxed text-xs sm:text-sm">{{ selectedPelaku.deskripsi }}</p>
-                </div>
-                
-                <!-- Address - Dirapikan -->
-                <div class="flex items-start mb-3 sm:mb-4">
-                  <div class="bg-wood-brown-100 p-1 rounded mr-2 mt-0.5">
-                    <svg class="w-3 h-3 sm:w-4 sm:h-4 text-wood-brown-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
-                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
+                <!-- Description with premium card -->
+                <div class="bg-gradient-to-br from-cream-50 to-white p-4 sm:p-5 rounded-xl shadow-lg border border-white/50">
+                  <h4 class="font-bold text-gray-800 mb-2 flex items-center">
+                    <svg class="w-4 h-4 mr-2 text-natural-green-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
                     </svg>
-                  </div>
-                  <div class="flex-1">
-                    <h4 class="font-semibold text-wood-brown-800 mb-0.5 text-xs sm:text-sm">Alamat:</h4>
-                    <p class="text-wood-brown-600 text-xs sm:text-sm leading-snug">{{ selectedPelaku.alamat }}</p>
+                    Tentang Usaha
+                  </h4>
+                  <p class="text-gray-700 leading-relaxed text-sm sm:text-base">{{ selectedPelaku.deskripsi }}</p>
+                </div>
+                
+                <!-- Address with premium styling -->
+                <div class="bg-gradient-to-br from-gray-50 to-white p-4 sm:p-5 rounded-xl shadow-lg border border-white/50">
+                  <div class="flex items-start gap-3">
+                    <div class="flex-shrink-0 bg-gradient-to-br from-natural-green-100 to-natural-green-50 p-2 rounded-lg">
+                      <svg class="w-6 h-6 text-natural-green-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
+                      </svg>
+                    </div>
+                    <div class="flex-1 min-w-0">
+                      <h4 class="font-bold text-gray-800 mb-0.5 leading-tight">Alamat</h4>
+                      <p class="text-gray-600 leading-tight break-words">{{ selectedPelaku.alamat }}</p>
+                    </div>
                   </div>
                 </div>
                 
-                <!-- Contact - Diperkecil -->
-                <div class="text-center">
-                  <a :href="'https://wa.me/' + selectedPelaku.kontak.replace(/\D/g, '')" target="_blank" class="inline-flex items-center px-3 py-2 bg-gradient-to-r from-green-500 to-green-600 text-white rounded-lg hover:from-green-600 hover:to-green-700 transition-all duration-300 shadow-md hover:shadow-lg transform hover:-translate-y-0.5 font-medium text-xs sm:text-sm">
-                    <svg class="w-3 h-3 sm:w-4 sm:h-4 mr-1 sm:mr-2" fill="currentColor" viewBox="0 0 24 24">
+                <!-- Contact with premium button -->
+                <div class="text-center pt-2">
+                  <a :href="'https://wa.me/' + selectedPelaku.kontak.replace(/\D/g, '')" target="_blank" class="inline-flex items-center px-6 py-3 bg-gradient-to-r from-green-500 via-green-600 to-green-700 text-white rounded-2xl hover:from-green-600 hover:via-green-700 hover:to-green-800 transition-all duration-300 shadow-xl hover:shadow-2xl transform hover:-translate-y-1 font-bold text-base relative overflow-hidden group">
+                    <span class="absolute inset-0 bg-gradient-to-r from-transparent via-white/30 to-transparent -translate-x-full group-hover:translate-x-full transition-transform duration-700"></span>
+                    <svg class="w-5 h-5 mr-3 relative z-10" fill="currentColor" viewBox="0 0 24 24">
                       <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/>
                       <path d="M12 0C5.373 0 0 5.373 0 12s5.373 12 12 12 12-5.373 12-12S18.627 0 12 0zm0 22c-5.523 0-10-4.477-10-10S6.477 2 12 2s10 4.477 10 10-4.477 10-10 10z"/>
                     </svg>
-                    Hubungi WhatsApp
+                    <span class="relative z-10">Hubungi WhatsApp</span>
                   </a>
                 </div>
               </div>
@@ -314,50 +353,47 @@
             <div v-for="(product, index) in featuredProducts" :key="index" 
                  class="flex-shrink-0 w-full sm:w-1/2 lg:w-1/3 px-2 sm:px-4 snap-start fade-in-section">
               <div
-  class="group relative bg-white rounded-2xl sm:rounded-3xl overflow-hidden shadow-md hover:shadow-xl transition-all duration-700 transform hover:-translate-y-2 sm:hover:-translate-y-3 hover:scale-[1.02] h-[380px] sm:h-[440px] flex flex-col border border-gray-100/40 
-  before:absolute before:inset-0 before:bg-gradient-to-r before:from-transparent before:via-white/30 before:to-transparent before:translate-x-[-100%] before:animate-[shimmer_2s_infinite] 
-  hover:before:animate-none hover:ring-1 hover:ring-natural-green-300/50 hover:shadow-natural-green-200/40">
+  class="group relative bg-gradient-to-br from-white to-cream-50 rounded-2xl sm:rounded-3xl overflow-hidden shadow-lg hover:shadow-xl transition-all duration-500 transform hover:-translate-y-3 sm:hover:-translate-y-4 hover:scale-[1.03] h-[400px] sm:h-[460px] flex flex-col border border-white/20 hover:border-natural-green-200 backdrop-blur-sm animate-in fade-in-0 zoom-in-95">
 
-                <!-- Product Image with Overlay -->
-                <div class="relative overflow-hidden h-40 sm:h-48 md:h-52 bg-gradient-to-br from-gray-100 to-gray-200">
+                <!-- Product Image with Modern Overlay -->
+                <div class="relative overflow-hidden h-44 sm:h-52 md:h-56 bg-gradient-to-br from-gray-50 to-gray-100">
                   <img :src="product.imageSrc" :alt="product.imageAlt" 
-                       class="w-full h-full object-cover object-center transition-all duration-700 hover:scale-110 group-hover:rotate-1">
-                  <div class="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-all duration-500"></div>
-                  <div class="absolute inset-0 bg-gradient-to-r from-transparent via-white/10 to-transparent -translate-x-full group-hover:translate-x-full transition-transform duration-1000"></div>
+                       class="w-full h-full object-cover object-top transition-all duration-500 hover:scale-110 group-hover:rotate-1">
                   
-                  <!-- Product Badge -->
-                  <div class="absolute top-2 sm:top-4 right-2 sm:right-4">
-                    <span class="inline-flex items-center px-2 sm:px-3 py-0.5 sm:py-1 rounded-full text-xs font-semibold bg-gradient-to-r from-natural-green-100 to-natural-green-200 text-natural-green-800 border border-natural-green-300/50 shadow-sm hover:shadow-lg hover:shadow-natural-green-300/50 transition-all duration-300 backdrop-blur-sm hover:scale-105">
-                      Unggulan
-                    </span>
-                  </div>
+                  <!-- Gradient Overlay -->
+                  <div class="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-all duration-500"></div>
+                  
+                  <!-- Shimmer Effect -->
+                  <div class="absolute inset-0 bg-gradient-to-r from-transparent via-white/40 to-transparent -translate-x-full group-hover:translate-x-full transition-transform duration-1000 animate-pulse"></div>
                 </div>
                 
                 <!-- Product Info -->
-                <div class="p-3 sm:p-4 flex-grow flex flex-col justify-between">
-                  <div class="space-y-1 sm:space-y-2 mb-2 sm:mb-3">
-                    <h3 class="text-base sm:text-lg font-bold text-wood-brown-800 group-hover:text-natural-green-700 transition-all duration-300 line-clamp-2 leading-tight transform group-hover:scale-105">{{ product.name }}</h3>
-                    <p class="text-wood-brown-600 text-xs sm:text-sm line-clamp-3 leading-relaxed">{{ product.description }}</p>
+                <div class="p-5 sm:p-6 flex-grow flex flex-col justify-between">
+                  <div class="space-y-2 mb-3 sm:mb-4">
+                    <h3 class="text-lg sm:text-xl font-bold text-gray-900 group-hover:text-natural-green-600 transition-all duration-300 line-clamp-2 leading-tight transform group-hover:translate-x-2 bg-gradient-to-r from-gray-900 to-gray-700 bg-clip-text group-hover:from-natural-green-600 group-hover:to-natural-green-700">{{ product.name }}</h3>
+                    <p class="text-gray-600 text-sm line-clamp-3 leading-relaxed bg-gradient-to-b from-gray-600 to-gray-500 bg-clip-text">{{ product.description }}</p>
                   </div>
                   
-                  <div class="space-y-2 sm:space-y-3">
-                    <div class="flex justify-between items-start pt-1 gap-2">
-                      <p class="text-base sm:text-lg font-bold text-natural-green-600 flex-shrink-0">{{ product.price }}</p>
-                      <div class="flex items-center text-xs sm:text-sm text-wood-brown-500 truncate">
-                        <svg class="w-3 h-3 sm:w-4 sm:h-4 mr-1 text-wood-brown-400 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <div class="space-y-3 sm:space-y-4">
+                    <div class="flex justify-between items-center gap-4">
+                      <p class="text-lg sm:text-xl font-bold text-natural-green-600 bg-gradient-to-r from-natural-green-600 to-natural-green-500 bg-clip-text flex-shrink-0">{{ product.price }}</p>
+                      <div class="flex items-center justify-end text-sm text-gray-500 min-w-0">
+                      <div class="flex items-center min-w-0">
+                        <svg class="w-4 h-4 text-natural-green-400 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                           <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
                           <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
                         </svg>
-                        <span class="truncate">{{ product.origin }}</span>
+                        <span class="truncate ml-1">{{ product.origin }}</span>
                       </div>
+                    </div>
                     </div>
                     
                     <!-- Order Button -->
                     <a :href="'https://wa.me/' + getKontakByUsaha(product.origin) + '?text=Halo, saya tertarik dengan produk ' + product.name + ' dari ' + product.origin" 
                        target="_blank" 
-                       class="w-full inline-flex items-center justify-center px-3 sm:px-4 py-2 sm:py-2.5 bg-gradient-to-r from-natural-green-600 via-natural-green-700 to-natural-green-800 text-white rounded-lg sm:rounded-xl hover:from-natural-green-700 hover:via-natural-green-800 hover:to-natural-green-900 transition-all duration-500 shadow-lg hover:shadow-xl transform hover:-translate-y-0.5 sm:hover:-translate-y-1 font-semibold text-xs sm:text-sm relative overflow-hidden group">
-                      <span class="absolute inset-0 bg-gradient-to-r from-transparent via-white/20 to-transparent -translate-x-full group-hover:translate-x-full transition-transform duration-1000"></span>
-                      <svg class="w-3 h-3 sm:w-4 sm:h-4 mr-1 sm:mr-2 relative z-10" fill="currentColor" viewBox="0 0 24 24">
+                       class="w-full inline-flex items-center justify-center px-4 sm:px-5 py-3 bg-gradient-to-r from-green-500 via-green-600 to-green-700 text-white rounded-xl sm:rounded-2xl hover:from-green-600 hover:via-green-700 hover:to-green-800 transition-all duration-300 shadow-xl hover:shadow-2xl transform hover:-translate-y-1 font-bold text-sm relative overflow-hidden group animate-bounce hover:animate-none">
+                      <span class="absolute inset-0 bg-gradient-to-r from-transparent via-white/30 to-transparent -translate-x-full group-hover:translate-x-full transition-transform duration-700"></span>
+                      <svg class="w-4 h-4 sm:w-5 sm:h-5 mr-2 relative z-10 animate-pulse" fill="currentColor" viewBox="0 0 24 24">
                         <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/>
                         <path d="M12 0C5.373 0 0 5.373 0 12s5.373 12 12 12 12-5.373 12-12S18.627 0 12 0zm0 22c-5.523 0-10-4.477-10-10S6.477 2 12 2s10 4.477 10 10-4.477 10-10 10z"/>
                       </svg>
