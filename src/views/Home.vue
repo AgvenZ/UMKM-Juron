@@ -263,14 +263,14 @@
                 <div class="absolute bottom-2 sm:bottom-6 left-4 sm:left-6 right-4 sm:right-6">
                   <div class="flex flex-col items-start gap-4">
                     <!-- Mobile: Badge nama -->
-                    <div class="sm:hidden bg-gradient-to-r from-black/70 to-black/50 backdrop-blur-sm rounded-xl p-3 border border-white/20 min-w-[160px] max-w-[240px]">
-                      <h3 class="text-lg font-bold text-white leading-tight truncate mb-1">{{ selectedPelaku.nama.split('(')[0].trim() }}</h3>
-                      <p class="text-white/90 text-sm truncate">{{ selectedPelaku.usaha }}</p>
+                    <div class="sm:hidden bg-gradient-to-r from-black/70 to-black/50 backdrop-blur-sm rounded-xl p-3 border border-white/20 w-auto max-w-[90%]">
+                      <h3 class="text-lg font-bold text-white leading-tight mb-1">{{ selectedPelaku.nama.split('(')[0].trim() }}</h3>
+                      <p class="text-white/90 text-sm">{{ selectedPelaku.usaha }}</p>
                     </div>
                     <!-- Desktop: Badge nama -->
-                    <div class="hidden sm:block bg-gradient-to-r from-black/70 to-black/50 backdrop-blur-sm rounded-xl p-3 sm:p-4 border border-white/20 min-w-[200px] max-w-[280px]">
-                      <h3 class="text-lg sm:text-xl font-bold text-white leading-tight truncate mb-1">{{ selectedPelaku.nama.split('(')[0].trim() }}</h3>
-                      <p class="text-white/90 text-sm sm:text-base truncate">{{ selectedPelaku.usaha }}</p>
+                    <div class="hidden sm:block bg-gradient-to-r from-black/70 to-black/50 backdrop-blur-sm rounded-xl p-3 sm:p-4 border border-white/20 w-auto max-w-[80%]">
+                      <h3 class="text-lg sm:text-xl font-bold text-white leading-tight mb-1">{{ selectedPelaku.nama.split('(')[0].trim() }}</h3>
+                      <p class="text-white/90 text-sm sm:text-base">{{ selectedPelaku.usaha }}</p>
                     </div>
                   </div>
                 </div>
