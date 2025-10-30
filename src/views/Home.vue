@@ -154,10 +154,10 @@
             <div v-for="(pelaku, index) in pelakuUMKM" :key="index" 
                  class="flex-shrink-0 w-full sm:w-1/2 lg:w-1/3 px-2 sm:px-4 snap-start fade-in-section">
               <div
-  class="group relative bg-gradient-to-br from-white to-cream-50 rounded-2xl sm:rounded-3xl overflow-hidden shadow-lg hover:shadow-xl transition-all duration-500 transform hover:-translate-y-3 sm:hover:-translate-y-4 hover:scale-[1.03] h-[560px] sm:h-[600px] flex flex-col border border-white/20 hover:border-natural-green-200 backdrop-blur-sm animate-in fade-in-0 zoom-in-95">
+  class="group relative bg-gradient-to-br from-white to-cream-50 rounded-2xl sm:rounded-3xl overflow-hidden shadow-lg hover:shadow-xl transition-all duration-500 transform hover:-translate-y-3 sm:hover:-translate-y-4 hover:scale-[1.03] h-[520px] sm:h-[600px] flex flex-col border border-white/20 hover:border-natural-green-200 backdrop-blur-sm animate-in fade-in-0 zoom-in-95">
                 
                 <!-- Pelaku Image with Modern Overlay -->
-                <div class="relative overflow-hidden h-80 sm:h-96 lg:h-[28rem] bg-gradient-to-br from-gray-50 to-gray-100">
+                <div class="relative overflow-hidden h-96 sm:h-96 lg:h-[28rem] bg-gradient-to-br from-gray-50 to-gray-100">
                   <img :src="pelaku.foto" :alt="pelaku.nama" 
                        class="w-full h-full object-cover object-top transition-all duration-500 hover:scale-110 group-hover:rotate-1">
                   
@@ -170,7 +170,7 @@
                 
                 <!-- Pelaku Info -->
                 <div class="p-5 sm:p-6 flex-grow flex flex-col justify-between">
-                  <div class="space-y-3 mb-3 sm:mb-4">
+                  <div class="space-y-2 mb-2 sm:mb-4">
                     <h3 class="text-xl sm:text-xl font-bold text-gray-900 group-hover:text-natural-green-600 transition-all duration-300 line-clamp-2 leading-tight transform group-hover:translate-x-2 bg-gradient-to-r from-gray-900 to-gray-700 bg-clip-text group-hover:from-natural-green-600 group-hover:to-natural-green-700">{{ pelaku.nama.split('(')[0].trim() }}</h3>
                     
                     <!-- Badges Container - Dipindahkan ke dalam card -->
@@ -242,7 +242,7 @@
           <div class="p-4 sm:p-5 md:p-6">
             <div class="flex flex-col gap-4 sm:gap-6">
               <!-- Image container with premium hover effect -->
-              <div class="w-full rounded-2xl overflow-hidden shadow-xl group relative bg-gradient-to-br from-gray-50 to-gray-100 h-[40rem] sm:h-[44rem] md:h-[48rem]">
+              <div class="w-full rounded-2xl overflow-hidden shadow-xl group relative bg-gradient-to-br from-gray-50 to-gray-100 h-[28rem] sm:h-[40rem] md:h-[44rem]">
                 <div class="relative w-full h-full overflow-hidden">
                   <img :src="selectedPelaku.foto" :alt="selectedPelaku.nama" class="absolute top-0 left-0 w-full h-full object-cover object-top transition-transform duration-500 group-hover:scale-125" style="transform-origin: top center; object-position: top;">
                 </div>
@@ -358,10 +358,10 @@
             <div v-for="(product, index) in featuredProducts" :key="index" 
                  class="flex-shrink-0 w-full sm:w-1/2 lg:w-1/3 px-2 sm:px-4 snap-start fade-in-section">
               <div
-  class="group relative bg-gradient-to-br from-white to-cream-50 rounded-2xl sm:rounded-3xl overflow-hidden shadow-lg hover:shadow-xl transition-all duration-500 transform hover:-translate-y-3 sm:hover:-translate-y-4 hover:scale-[1.03] h-[440px] sm:h-[500px] flex flex-col border border-white/20 hover:border-natural-green-200 backdrop-blur-sm animate-in fade-in-0 zoom-in-95">
+  class="group relative bg-gradient-to-br from-white to-cream-50 rounded-2xl sm:rounded-3xl overflow-hidden shadow-lg hover:shadow-xl transition-all duration-500 transform hover:-translate-y-3 sm:hover:-translate-y-4 hover:scale-[1.03] h-[480px] sm:h-[500px] flex flex-col border border-white/20 hover:border-natural-green-200 backdrop-blur-sm animate-in fade-in-0 zoom-in-95">
 
                 <!-- Product Image with Modern Overlay -->
-                <div class="relative overflow-hidden h-64 sm:h-72 md:h-80 bg-gradient-to-br from-gray-50 to-gray-100">
+                <div class="relative overflow-hidden h-80 sm:h-72 md:h-80 bg-gradient-to-br from-gray-50 to-gray-100">
                   <img :src="product.imageSrc" :alt="product.imageAlt" 
                        class="w-full h-full object-cover object-top transition-all duration-500 hover:scale-110 group-hover:rotate-1">
                   
