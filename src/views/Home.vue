@@ -176,7 +176,7 @@
                     <!-- Badges Container - Dipindahkan ke dalam card -->
                     <div class="flex flex-wrap gap-2 sm:gap-3">
                       <!-- WhatsApp Business Badge - Tidak ditampilkan untuk Bu Endang -->
-                      <span v-if="pelaku.nama !== 'Bu Endang' && pelaku.nama !== '' && pelaku.nama !== ''" class="inline-flex items-center px-2 py-1 rounded-full text-xs font-bold bg-gradient-to-r from-green-500 to-green-600 text-white shadow-lg transform hover:scale-105 transition-all duration-300 backdrop-blur-sm border border-white/20">
+                      <span v-if="pelaku.nama !== 'Bu Endang' && pelaku.nama !== 'Bu Dwi Cahyani' && pelaku.nama !== ''" class="inline-flex items-center px-2 py-1 rounded-full text-xs font-bold bg-gradient-to-r from-green-500 to-green-600 text-white shadow-lg transform hover:scale-105 transition-all duration-300 backdrop-blur-sm border border-white/20">
                         <svg class="w-3 h-3 mr-1" fill="currentColor" viewBox="0 0 24 24">
                           <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/>
                           <path d="M12 0C5.373 0 0 5.373 0 12s5.373 12 12 12 12-5.373 12-12S18.627 0 12 0zm0 22c-5.523 0-10-4.477-10-10S6.477 2 12 2s10 4.477 10 10-4.477 10-10 10z"/>
@@ -249,7 +249,7 @@
                 <div class="absolute inset-0 bg-gradient-to-t from-black/70 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-all duration-500"></div>
                 
                 <!-- WhatsApp Business Badge - Top Right Position - Tidak ditampilkan untuk Bu Endang -->
-                <div v-if="selectedPelaku?.nama !== 'Bu Endang' && selectedPelaku?.nama !== 'Bu Enny'" class="absolute top-2 sm:top-4 right-2 sm:right-4">
+                <div v-if="selectedPelaku?.nama !== 'Bu Endang' && selectedPelaku?.nama !== 'Bu Dwi Cahyani'" class="absolute top-2 sm:top-4 right-2 sm:right-4">
                   <span class="inline-flex items-center px-2 py-1 sm:px-3 sm:py-2 rounded-full text-xs sm:text-sm font-bold bg-gradient-to-r from-green-500 to-green-600 text-white shadow-lg transform hover:scale-105 transition-all duration-300 backdrop-blur-sm border border-white/30 flex-shrink-0">
                     <svg class="w-3 h-3 sm:w-4 sm:h-4 mr-1" fill="currentColor" viewBox="0 0 24 24">
                       <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/>
@@ -484,6 +484,13 @@
             <p class="text-xs sm:text-sm text-cream-200/60 mb-3 sm:mb-0">© 2025 UMKM Desa Juron. All rights reserved.</p>
           </div>
         </div>
+
+        <!-- Contact Admin Section -->
+        <div class="pt-4 pb-6 px-4 sm:px-0">
+          <p class="text-[11px] sm:text-sm text-cream-200/60 mb-3 sm:mb-0 leading-tight text-center sm:text-left whitespace-nowrap">
+            Butuh bantuan? Hubungi Admin di <span class="font-medium text-cream-100">+62-881-4183-245</span>
+          </p>
+        </div>
       </div>
     </footer>
   </div>
@@ -586,13 +593,10 @@ export default {
         { usaha: 'Es Doger Kita', kontak: '+62 857 2261 3566' },
         { usaha: 'Dapur Bu Suprih', kontak: '+62 831 3966 0179' },
         { usaha: 'Pawon Jeng Enny', kontak: '+62 812 1735 7450' },
-        { usaha: 'Kopi Juron', kontak: '+62 814 5678 9012' },
-        { usaha: 'Batik Juron Indah', kontak: '+62 815 6789 0123' },
-        { usaha: 'Tani Organik Juron', kontak: '+62 816 7890 1234' },
-        { usaha: 'Kriya Pandan Juron', kontak: '+62 817 8901 2345' },
-        { usaha: 'Tani Madu Juron', kontak: '+62 818 9012 3456' },
-        { usaha: 'Tani Aren Juron', kontak: '+62 819 0123 4567' },
-        { usaha: 'Ayam Goreng Kampung Mbak Endang', kontak: '+62 821 2221 6963' }
+        { usaha: 'Dapur Yumna', kontak: '+62 821 1775 3290' },
+        { usaha: 'Ayam Goreng Kampung Mbak Endang', kontak: '+62 821 2221 8983' },
+        { usaha: 'Mina Roso Lumintu', kontak: '+62 819 0474 0031' },
+        { usaha: 'Nasi Goreng Putri Pak Jumino', kontak: '+62 823 2476 5191' },
       ]
       
       const pelaku = pelakuList.find(p => p.usaha === usaha)
@@ -652,20 +656,12 @@ export default {
           imageAlt: 'Nugget Lele'
         },
         {
-          name: 'Gula Aren Organik',
-          description: 'Gula aren organik yang diolah secara tradisional.',
-          price: 'Rp 65.000',
-          origin: 'Tani Aren Juron',
-          imageSrc: 'https://images.unsplash.com/photo-1509281373149-e957c6296406?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1169&q=80',
-          imageAlt: 'Gula Aren'
-        },
-        {
-          name: 'Gula Aren Organik',
-          description: 'Gula aren organik yang diolah secara tradisional.',
-          price: 'Rp 65.000',
-          origin: 'Tani Aren Juron',
-          imageSrc: 'https://images.unsplash.com/photo-1509281373149-e957c6296406?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1169&q=80',
-          imageAlt: 'Gula Aren'
+          name: 'Nasi Goreng',
+          description: 'Nasi Goreng dengan cita rasa gurih dan aroma menggugah selera.',
+          price: 'Rp 12.000',
+          origin: 'Nasi Goreng Putri Pak Jumino',
+          imageSrc: '/src/assets/img/NasiGoreng.jpg',
+          imageAlt: 'Nasi Goreng'
         },
       ]
 
@@ -674,7 +670,7 @@ export default {
           id: 'tini',
           nama: 'Bu Tini',
           jenisUsaha: 'Minuman',
-          foto: '/src/assets/img/IbuTini.jpg',
+          foto: '/src/assets/img/IbuTini.png',
           deskripsi: 'Bu Tini menjual berbagai jajanan sederhana namun digemari banyak orang. Setiap hari, Bu Tini menawarkan donat lembut, aneka gorengan hangat seperti corndog, tempura, dll, serta aneka es seperti es doger, pop ice dan minuman sachet lain yang menyegarkan.',
           kontak: '+62 857 2261 3566',
           alamat: 'Desa Juron Rt 03, Rw 05',
@@ -684,7 +680,7 @@ export default {
           id: 'ninik',
           nama: 'Bu Ninik',
           jenisUsaha: 'Makanan & Minuman Siap Saji',
-          foto: '/src/assets/img/IbuNinik.jpg',
+          foto: '/src/assets/img/IbuNinik.png',
           deskripsi: 'Bu Ninik menjual aneka makanan dan minuman seperti nasi ayam katsu, ayam karage, nasi rames, dan menu lezat lainnya. Setiap hidangan disajikan hangat dengan cita rasa gurih khas rumahan, cocok untuk santapan siang maupun malam. Selain makanan, tersedia juga minuman segar yang melengkapi hidangan.',
           kontak: '+62 831 3966 0179',
           alamat: 'Desa Juron Rt 01, Rw 04',
@@ -694,7 +690,7 @@ export default {
           id: 'enny',
           nama: 'Bu Enny',
           jenisUsaha: 'Makanan & Minuman Siap Saji',
-          foto: '/src/assets/img/IbuEnny.jpg',
+          foto: '/src/assets/img/IbuEnny.png',
           deskripsi: 'Bu Enny menjual aneka makanan dan minuman seperti gado-gado, soto ayam, soto daging, dan nasi tumpeng. Setiap hidangan disajikan dengan cita rasa khas rumahan yang lezat dan menggugah selera. Selain itu, tersedia juga minuman segar yang menambah kenikmatan setiap santapan.',
           kontak: '+62 812 1735 7450',
           alamat: 'Desa Juron Rt 01, Rw 05',
@@ -704,7 +700,7 @@ export default {
           id: 'ayu',
           nama: 'Bu Ayu',
           jenisUsaha: 'Makanan & Minuman Siap Saji',
-          foto: '/src/assets/img/IbuAyu.jpg',
+          foto: '/src/assets/img/IbuAyu.png',
           deskripsi: 'Bu Ayu menjual beragam hidangan lezat seperti seblak prasmanan, mie level, mie ayam, dan mie jebew. Setiap menu dibuat dengan cita rasa khas yang menggugah selera dan disajikan hangat untuk para pelanggan. Selain itu, tersedia pula aneka minuman segar yang cocok dinikmati bersama hidangan utama.',
           kontak: '+62 821 1775 3290',
           alamat: 'Desa Juron Rt 02, Rw 03',
@@ -714,7 +710,7 @@ export default {
           id: 'endang',
           nama: 'Bu Endang',
           jenisUsaha: 'Makanan & Minuman Siap Saji',
-          foto: '/src/assets/img/IbuEndang.jpg',
+          foto: '/src/assets/img/IbuEndang.png',
           deskripsi: 'Bu Endang menjual hidangan ayam goreng kampung dengan cita rasa gurih khas rumahan yang menggugah selera. Ayam kampung pilihan digoreng hingga keemasan dengan bumbu meresap sempurna, menghasilkan rasa lezat di setiap gigitan. Pelanggan juga bisa memesan satu potong ayam sebagai pilihan sajian.',
           kontak: '+62 821 2221 6963',
           alamat: 'Desa Juron Rt 01, Rw 04',
@@ -724,31 +720,21 @@ export default {
           id: 'wahyuni',
           nama: 'Bu Wahyuni',
           jenisUsaha: 'Makanan',
-          foto: '/src/assets/img/IbuWahyuni.jpg',
+          foto: '/src/assets/img/IbuWahyuni.png',
           deskripsi: 'Ibu Wahyuni menawarkan nugget lele dan keripik pare buatan rumahan yang unik dan lezat. Nugget lele dibuat dari daging lele segar pilihan yang diolah dengan bumbu khas, menghasilkan tekstur lembut di dalam dan renyah di luar cocok untuk camilan maupun lauk makan. Sementara keripik pare hadir dengan sensasi gurih yang khas, digoreng garing tanpa bahan pengawet, menjadikannya pilihan camilan sehat nan nikmat.',
           kontak: '+62 819 0474 0031',
           alamat: 'Desa Juron Rt 02, Rw 03',
           usaha: 'Mina Roso Lumintu'
         },
         {
-          id: 'darto',
-          nama: 'Pak Darto',
-          jenisUsaha: 'Madu Hutan',
-          foto: 'https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80',
-          deskripsi: 'Pak Darto adalah peternak lebah yang menghasilkan madu hutan berkualitas tinggi. Ia memelihara lebah dengan cara tradisional dan ramah lingkungan, sehingga menghasilkan madu murni dengan khasiat yang maksimal.',
+          id: 'dwi cahyani',
+          nama: 'Bu Dwi Cahyani',
+          jenisUsaha: 'Makanan',
+          foto: '/src/assets/img/IbuDwi.png',
+          deskripsi: 'Bu Dwi Cahyani menawarkan berbagai hidangan lezat seperti nasi goreng, mie kuah, dan capcay yang diolah dengan bumbu pilihan, menghasilkan cita rasa gurih dan menggugah selera. Setiap menu disajikan hangat dan penuh rasa, cocok dinikmati kapan saja bersama keluarga.',
           kontak: '+62 818 9012 3456',
-          alamat: 'Dusun Madu Lestari, Desa Juron',
-          usaha: 'Tani Madu Juron'
-        },
-        {
-          id: 'yanti',
-          nama: 'Bu Yanti',
-          jenisUsaha: 'Gula Aren',
-          foto: 'https://images.unsplash.com/photo-1544005313-94ddf0286df2?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=688&q=80',
-          deskripsi: 'Bu Yanti mengolah nira aren menjadi gula aren organik dengan cara tradisional. Proses produksinya masih menggunakan peralatan sederhana dan tanpa bahan tambahan kimia, sehingga menghasilkan gula aren dengan cita rasa khas yang alami.',
-          kontak: '+62 819 0123 4567',
-          alamat: 'Dusun Aren Manis, Desa Juron',
-          usaha: 'Tani Aren Juron'
+          alamat: 'Desa Juron Rt 01, Rw 03',
+          usaha: 'Nasi Goreng Putri Pak Jumino'
         },
       ]
 
