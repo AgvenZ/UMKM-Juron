@@ -55,7 +55,7 @@
           <h2 class="text-2xl sm:text-3xl md:text-4xl font-bold mb-2 sm:mb-3 md:mb-4 text-transparent bg-clip-text bg-gradient-to-r from-wood-brown-800 to-natural-green-700 leading-[1.8] inline-block pb-4">Tentang Desa Juron</h2>
           <div class="w-24 sm:w-28 md:w-32 h-1 bg-gradient-to-r from-natural-green-500 to-natural-green-400 mx-auto mb-4 sm:mb-5 md:mb-6 rounded-full"></div>
           <p class="text-base sm:text-lg text-wood-brown-700 max-w-3xl mx-auto px-4 sm:px-0">
-            Desa yang kaya akan tradisi, keindahan alam, dan semangat kewirausahaan masyarakatnya
+            Desa yang kaya akan tradisi, keindahan alam, dan semangat kewirausahaan masyarakatnya.
           </p>
         </div>
         
@@ -478,18 +478,18 @@
       <div class="absolute inset-0 bg-[url('https://www.transparenttextures.com/patterns/cubes.png')] opacity-5 z-0"></div>
       
       <!-- Main Footer Content -->
-      <div class="container-custom relative pb-8 sm:px-6">
+      <div class="container-custom relative pb-5 sm:px-6">
         
         <!-- Copyright Section -->
-        <div class="pt-6 sm:pt-8 border-t border-wood-brown-700/50">
+        <div class="pt-4 sm:pt-5 border-t border-wood-brown-700/50">
           <div class="flex flex-col sm:flex-row justify-between items-center">
-            <p class="text-xs sm:text-sm text-cream-200/60 mb-3 sm:mb-0">© 2025 UMKM Desa Juron. All rights reserved.</p>
+            <p class="text-xs sm:text-sm text-cream-200/60 mb-2 sm:mb-0">© 2025 UMKM Desa Juron. All rights reserved.</p>
           </div>
         </div>
 
         <!-- Contact Admin Section -->
-        <div class="pt-4 pb-6 px-4 sm:px-0">
-          <p class="text-[11px] sm:text-sm text-cream-200/60 mb-3 sm:mb-0 leading-tight text-center sm:text-left whitespace-nowrap">
+        <div class="pt-2 pb-3 px-4 sm:px-0">
+          <p class="text-[11px] sm:text-sm text-cream-200/60 mb-1 sm:mb-0 leading-tight text-center sm:text-left whitespace-nowrap">
             Butuh bantuan? Hubungi Admin di <span class="font-medium text-cream-100">+62-881-4183-245</span>
           </p>
         </div>
