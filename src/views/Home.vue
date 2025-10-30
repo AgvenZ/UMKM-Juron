@@ -263,12 +263,12 @@
                 <div class="absolute bottom-2 sm:bottom-6 left-4 sm:left-6 right-4 sm:right-6">
                   <div class="flex flex-col items-start gap-4">
                     <!-- Mobile: Badge nama -->
-                    <div class="sm:hidden bg-gradient-to-r from-black/70 to-black/50 backdrop-blur-sm rounded-xl p-3 border border-white/20 w-1/2 max-w-xs">
+                    <div class="sm:hidden bg-gradient-to-r from-black/70 to-black/50 backdrop-blur-sm rounded-xl p-3 border border-white/20 min-w-[160px] max-w-[240px]">
                       <h3 class="text-lg font-bold text-white leading-tight truncate mb-1">{{ selectedPelaku.nama.split('(')[0].trim() }}</h3>
                       <p class="text-white/90 text-sm truncate">{{ selectedPelaku.usaha }}</p>
                     </div>
                     <!-- Desktop: Badge nama -->
-                    <div class="hidden sm:block bg-gradient-to-r from-black/70 to-black/50 backdrop-blur-sm rounded-xl p-3 sm:p-4 border border-white/20 max-w-[200px]">
+                    <div class="hidden sm:block bg-gradient-to-r from-black/70 to-black/50 backdrop-blur-sm rounded-xl p-3 sm:p-4 border border-white/20 min-w-[200px] max-w-[280px]">
                       <h3 class="text-lg sm:text-xl font-bold text-white leading-tight truncate mb-1">{{ selectedPelaku.nama.split('(')[0].trim() }}</h3>
                       <p class="text-white/90 text-sm sm:text-base truncate">{{ selectedPelaku.usaha }}</p>
                     </div>
@@ -594,7 +594,7 @@ export default {
         { usaha: 'Dapur Bu Suprih', kontak: '+62 831 3966 0179' },
         { usaha: 'Pawon Jeng Enny', kontak: '+62 812 1735 7450' },
         { usaha: 'Dapur Yumna', kontak: '+62 821 1775 3290' },
-        { usaha: 'Ayam Goreng Kampung Mbak Endang', kontak: '+62 821 2221 8983' },
+        { usaha: 'Ayam Goreng Kampung Mbak Endang', kontak: '+62 821 2221 6963' },
         { usaha: 'Mina Roso Lumintu', kontak: '+62 819 0474 0031' },
         { usaha: 'Nasi Goreng Putri Pak Jumino', kontak: '+62 823 2476 5191' },
       ]
@@ -732,7 +732,7 @@ export default {
           jenisUsaha: 'Makanan',
           foto: '/src/assets/img/IbuDwi.png',
           deskripsi: 'Bu Dwi Cahyani menawarkan berbagai hidangan lezat seperti nasi goreng, mie kuah, dan capcay yang diolah dengan bumbu pilihan, menghasilkan cita rasa gurih dan menggugah selera. Setiap menu disajikan hangat dan penuh rasa, cocok dinikmati kapan saja bersama keluarga.',
-          kontak: '+62 818 9012 3456',
+          kontak: '+62 823 2476 5191',
           alamat: 'Desa Juron Rt 01, Rw 03',
           usaha: 'Nasi Goreng Putri Pak Jumino'
         },
