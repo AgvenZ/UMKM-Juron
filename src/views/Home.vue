@@ -62,11 +62,13 @@
         <div class="grid grid-cols-1 md:grid-cols-2 gap-8 sm:gap-10 md:gap-12 items-center">
           <div class="fade-in-section">
             <div class="relative rounded-2xl overflow-hidden shadow-xl group">
-              <img src="/src/assets/img/BalaiDesaJuron.jpg" 
-                   alt="Aktivitas masyarakat desa" 
-                   class="w-full h-64 sm:h-80 md:h-[500px] object-cover object-top transform transition-transform duration-700 group-hover:scale-110">
+              <img :src="desaInfo.imageSrc" 
+                   :alt="desaInfo.imageAlt" 
+                   class="w-full h-64 sm:h-80 md:h-[500px] object-cover object-top transform transition-transform duration-700 group-hover:scale-110"
+                   @error="console.error('Failed to load desa image:', desaInfo.imageSrc)"
+                   @load="console.log('Successfully loaded desa image:', desaInfo.imageSrc)">
               <div class="absolute inset-0 bg-gradient-to-t from-wood-brown-900/70 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end p-6">
-                <p class="text-white font-medium">Desa Juron, Kecamatan Nguter, Kabupaten Sukoharjo, Jawa Tengah</p>
+                <p class="text-white font-medium">{{ desaInfo.location }}</p>
               </div>
             </div>
           </div>
@@ -497,9 +499,49 @@
 </template>
 
 <script>
-import { ref, onMounted, onUnmounted } from 'vue'
+import { ref, onMounted, onUnmounted, computed } from 'vue'
+
+// Import all images
+import BalaiDesaJuronImage from '@/assets/img/BalaiDesaJuron.jpg'
+console.log('BalaiDesaJuronImage:', BalaiDesaJuronImage)
+
+// Alternative explicit import untuk force Vite
+const BalaiDesaJuronUrl = new URL('@/assets/img/BalaiDesaJuron.jpg', import.meta.url).href
+console.log('BalaiDesaJuronUrl:', BalaiDesaJuronUrl)
+import IbuTiniImage from '@/assets/img/IbuTini.png'
+import IbuNinikImage from '@/assets/img/IbuNinik.png'
+import IbuEnnyImage from '@/assets/img/IbuEnny.png'
+import IbuAyuImage from '@/assets/img/IbuAyu.png'
+import IbuEndangImage from '@/assets/img/IbuEndang.png'
+import IbuWahyuniImage from '@/assets/img/IbuWahyuni.png'
+import IbuDwiImage from '@/assets/img/IbuDwi.png'
+import EsDogerImage from '@/assets/img/EsDoger.jpg'
+import NasiAyamKatsuImage from '@/assets/img/NasiAyamKatsu.png'
+import GadoGadoTelurImage from '@/assets/img/GadoGadoTelur.jpg'
+import SeblakPrasmananImage from '@/assets/img/SeblakPrasmanan.jpg'
+import AyamGorengKampungImage from '@/assets/img/AyamGorengKampung.png'
+import NuggetLeleImage from '@/assets/img/NuggetLele.jpg'
+import NasiGorengImage from '@/assets/img/NasiGoreng.jpg'
 export default {
   name: 'Home',
+  // Ensure images are included in build
+  images: {
+    BalaiDesaJuronImage,
+    IbuTiniImage,
+    IbuNinikImage,
+    IbuEnnyImage,
+    IbuAyuImage,
+    IbuEndangImage,
+    IbuWahyuniImage,
+    IbuDwiImage,
+    EsDogerImage,
+    NasiAyamKatsuImage,
+    GadoGadoTelurImage,
+    SeblakPrasmananImage,
+    AyamGorengKampungImage,
+    NuggetLeleImage,
+    NasiGorengImage
+  },
   setup() {
     const selectedPelaku = ref(null)
     const umkmContainer = ref(null)
@@ -508,6 +550,20 @@ export default {
       name: '',
       email: '',
       message: ''
+    })
+
+    // Data untuk gambar desa - format sama seperti product
+    const desaInfo = ref({
+      imageSrc: BalaiDesaJuronUrl, // Use URL format instead
+      imageAlt: 'Aktivitas masyarakat desa',
+      location: 'Desa Juron, Kecamatan Nguter, Kabupaten Sukoharjo, Jawa Tengah'
+    })
+
+    // Computed property untuk force reference ke gambar
+    const balaiDesaImage = computed(() => {
+      // Ini akan memaksa Vite untuk include gambar ini di build
+      console.log('Force including BalaiDesaJuronImage:', BalaiDesaJuronImage)
+      return BalaiDesaJuronImage
     })
 
     const showModal = (pelaku) => {
@@ -612,7 +668,7 @@ export default {
           description: 'Es Doger segar dengan cita rasa manis gurih khas santan dan tape.',
           price: 'Rp 5.000',
           origin: 'Es Doger Kita',
-          imageSrc: '/src/assets/img/EsDoger.jpg',
+          imageSrc: EsDogerImage,
           imageAlt: 'Es Doger'
         },
         {
@@ -620,7 +676,7 @@ export default {
           description: 'Nasi Ayam Katsu renyah berpadu dengan nasi hangat dan saus sambal.',
           price: 'Rp 7.000',
           origin: 'Dapur Bu Suprih',
-          imageSrc: '/src/assets/img/NasiAyamKatsu.png',
+          imageSrc: NasiAyamKatsuImage,
           imageAlt: 'Nasi Ayam Katsu'
         },
         {
@@ -628,7 +684,7 @@ export default {
           description: 'Gado-Gado Telur disajikan dengan siraman bumbu kacang yang nikmat.',
           price: 'Rp 10.000',
           origin: 'Pawon Jeng Enny',
-          imageSrc: '/src/assets/img/GadoGadoTelur.jpg',
+          imageSrc: GadoGadoTelurImage,
           imageAlt: 'Gado-Gado Telur'
         },
         {
@@ -636,7 +692,7 @@ export default {
           description: 'Seblak Prasmanan dengan beragam topping dan tingkat pedas pilihan pelanggan.',
           price: 'Rp -',
           origin: 'Dapur Yumna',
-          imageSrc: '/src/assets/img/SeblakPrasmanan.jpg',
+          imageSrc: SeblakPrasmananImage,
           imageAlt: 'Seblak Prasmanan'
         },
         {
@@ -644,7 +700,7 @@ export default {
           description: 'Ayam Goreng Kampung disajikan dengan cita rasa gurih khas rumahan.',
           price: 'Rp 22.000',
           origin: 'Ayam Goreng Kampung Mbak Endang',
-          imageSrc: '/src/assets/img/AyamGorengKampung.png',
+          imageSrc: AyamGorengKampungImage,
           imageAlt: 'Ayam Goreng Kampung'
         },
         {
@@ -652,7 +708,7 @@ export default {
           description: 'Nugget Lele dengan bumbu khas rumahan yang gurih dan renyah di setiap gigitan.',
           price: 'Rp 15.000',
           origin: 'Mina Roso Lumintu',
-          imageSrc: '/src/assets/img/NuggetLele.jpg',
+          imageSrc: NuggetLeleImage,
           imageAlt: 'Nugget Lele'
         },
         {
@@ -660,7 +716,7 @@ export default {
           description: 'Nasi Goreng dengan cita rasa gurih dan aroma menggugah selera.',
           price: 'Rp 12.000',
           origin: 'Nasi Goreng Putri Pak Jumino',
-          imageSrc: '/src/assets/img/NasiGoreng.jpg',
+          imageSrc: NasiGorengImage,
           imageAlt: 'Nasi Goreng'
         },
       ]
@@ -670,7 +726,7 @@ export default {
           id: 'tini',
           nama: 'Bu Tini',
           jenisUsaha: 'Minuman',
-          foto: '/src/assets/img/IbuTini.png',
+          foto: IbuTiniImage,
           deskripsi: 'Bu Tini menjual berbagai jajanan sederhana namun digemari banyak orang. Setiap hari, Bu Tini menawarkan donat lembut, aneka gorengan hangat seperti corndog, tempura, dll, serta aneka es seperti es doger, pop ice dan minuman sachet lain yang menyegarkan.',
           kontak: '+62 857 2261 3566',
           alamat: 'Desa Juron Rt 03, Rw 05',
@@ -680,7 +736,7 @@ export default {
           id: 'ninik',
           nama: 'Bu Ninik',
           jenisUsaha: 'Makanan & Minuman Siap Saji',
-          foto: '/src/assets/img/IbuNinik.png',
+          foto: IbuNinikImage,
           deskripsi: 'Bu Ninik menjual aneka makanan dan minuman seperti nasi ayam katsu, ayam karage, nasi rames, dan menu lezat lainnya. Setiap hidangan disajikan hangat dengan cita rasa gurih khas rumahan, cocok untuk santapan siang maupun malam. Selain makanan, tersedia juga minuman segar yang melengkapi hidangan.',
           kontak: '+62 831 3966 0179',
           alamat: 'Desa Juron Rt 01, Rw 04',
@@ -690,7 +746,7 @@ export default {
           id: 'enny',
           nama: 'Bu Enny',
           jenisUsaha: 'Makanan & Minuman Siap Saji',
-          foto: '/src/assets/img/IbuEnny.png',
+          foto: IbuEnnyImage,
           deskripsi: 'Bu Enny menjual aneka makanan dan minuman seperti gado-gado, soto ayam, soto daging, dan nasi tumpeng. Setiap hidangan disajikan dengan cita rasa khas rumahan yang lezat dan menggugah selera. Selain itu, tersedia juga minuman segar yang menambah kenikmatan setiap santapan.',
           kontak: '+62 812 1735 7450',
           alamat: 'Desa Juron Rt 01, Rw 05',
@@ -700,7 +756,7 @@ export default {
           id: 'ayu',
           nama: 'Bu Ayu',
           jenisUsaha: 'Makanan & Minuman Siap Saji',
-          foto: '/src/assets/img/IbuAyu.png',
+          foto: IbuAyuImage,
           deskripsi: 'Bu Ayu menjual beragam hidangan lezat seperti seblak prasmanan, mie level, mie ayam, dan mie jebew. Setiap menu dibuat dengan cita rasa khas yang menggugah selera dan disajikan hangat untuk para pelanggan. Selain itu, tersedia pula aneka minuman segar yang cocok dinikmati bersama hidangan utama.',
           kontak: '+62 821 1775 3290',
           alamat: 'Desa Juron Rt 02, Rw 03',
@@ -710,7 +766,7 @@ export default {
           id: 'endang',
           nama: 'Bu Endang',
           jenisUsaha: 'Makanan & Minuman Siap Saji',
-          foto: '/src/assets/img/IbuEndang.png',
+          foto: IbuEndangImage,
           deskripsi: 'Bu Endang menjual hidangan ayam goreng kampung dengan cita rasa gurih khas rumahan yang menggugah selera. Ayam kampung pilihan digoreng hingga keemasan dengan bumbu meresap sempurna, menghasilkan rasa lezat di setiap gigitan. Pelanggan juga bisa memesan satu potong ayam sebagai pilihan sajian.',
           kontak: '+62 821 2221 6963',
           alamat: 'Desa Juron Rt 01, Rw 04',
@@ -720,7 +776,7 @@ export default {
           id: 'wahyuni',
           nama: 'Bu Wahyuni',
           jenisUsaha: 'Makanan',
-          foto: '/src/assets/img/IbuWahyuni.png',
+          foto: IbuWahyuniImage,
           deskripsi: 'Ibu Wahyuni menawarkan nugget lele dan keripik pare buatan rumahan yang unik dan lezat. Nugget lele dibuat dari daging lele segar pilihan yang diolah dengan bumbu khas, menghasilkan tekstur lembut di dalam dan renyah di luar cocok untuk camilan maupun lauk makan. Sementara keripik pare hadir dengan sensasi gurih yang khas, digoreng garing tanpa bahan pengawet, menjadikannya pilihan camilan sehat nan nikmat.',
           kontak: '+62 819 0474 0031',
           alamat: 'Desa Juron Rt 02, Rw 03',
@@ -730,7 +786,7 @@ export default {
           id: 'dwi cahyani',
           nama: 'Bu Dwi Cahyani',
           jenisUsaha: 'Makanan',
-          foto: '/src/assets/img/IbuDwi.png',
+          foto: IbuDwiImage,
           deskripsi: 'Bu Dwi Cahyani menawarkan berbagai hidangan lezat seperti nasi goreng, mie kuah, dan capcay yang diolah dengan bumbu pilihan, menghasilkan cita rasa gurih dan menggugah selera. Setiap menu disajikan hangat dan penuh rasa, cocok dinikmati kapan saja bersama keluarga.',
           kontak: '+62 823 2476 5191',
           alamat: 'Desa Juron Rt 01, Rw 03',
@@ -766,7 +822,9 @@ export default {
       submitForm,
       getKontakByUsaha,
       featuredProducts,
-      pelakuUMKM
+      pelakuUMKM,
+      desaInfo,
+      balaiDesaImage // Force reference
     }
   }
 }

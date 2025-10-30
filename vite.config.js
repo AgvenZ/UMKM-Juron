@@ -16,7 +16,17 @@ export default defineConfig({
   build: {
     outDir: 'dist',
     assetsDir: 'assets',
-    emptyOutDir: true
+    emptyOutDir: true,
+    rollupOptions: {
+      output: {
+        assetFileNames: 'assets/[name]-[hash][extname]'
+      },
+      // Force include specific assets
+      external: (id) => {
+        // Don't externalize any assets - force them to be included
+        return false;
+      }
+    }
   },
-  base: './'
+  base: process.env.NODE_ENV === 'production' ? '/' : './'
 })
