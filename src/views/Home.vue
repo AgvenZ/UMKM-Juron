@@ -1,7 +1,7 @@
 <template>
   <div>
     <!-- Hero Section -->
-    <section id="home" class="relative min-h-screen flex items-center pt-20 sm:pt-24">
+    <section id="home" class="relative min-h-screen flex items-center pt-5 sm:pt-7">
       <div class="absolute inset-0 z-0 overflow-hidden">
         <div class="absolute inset-0 bg-cover bg-center" style="background-image: url('https://images.unsplash.com/photo-1500382017468-9049fed747ef?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1932&q=80'); opacity: 0.85;"></div>
         <div class="absolute inset-0 bg-gradient-to-b from-wood-brown-900/30 via-transparent to-white"></div>
@@ -15,7 +15,7 @@
         <div class="cloud cloud-3 opacity-80"></div>
       </div>
       
-      <div class="container-custom relative z-10 px-4 sm:px-6 lg:px-8 pt-16 sm:pt-20 lg:pt-24">
+      <div class="container-custom relative z-10 px-4 sm:px-6 lg:px-8">
         <div class="max-w-4xl backdrop-blur-sm bg-white/10 p-4 sm:p-6 md:p-8 rounded-2xl shadow-lg border border-white/20 mx-auto">
           <h1 class="text-xl sm:text-2xl md:text-3xl lg:text-4xl xl:text-5xl 2xl:text-6xl font-bold mb-1 sm:mb-4 text-transparent bg-clip-text bg-gradient-to-r from-wood-brown-800 to-natural-green-700 leading-relaxed py-1 inline-block">
             Tingkatkan Ekonomi Desa Juron Melalui Digitalisasi Produk UMKM
@@ -177,8 +177,8 @@
                     
                     <!-- Badges Container - Dipindahkan ke dalam card -->
                     <div class="flex flex-wrap gap-2 sm:gap-3">
-                      <!-- WhatsApp Business Badge - Tidak ditampilkan untuk Bu Endang -->
-                      <span v-if="pelaku.nama !== 'Bu Endang' && pelaku.nama !== 'Bu Dwi Cahyani' && pelaku.nama !== ''" class="inline-flex items-center px-2 py-1 rounded-full text-xs font-bold bg-gradient-to-r from-green-500 to-green-600 text-white shadow-lg transform hover:scale-105 transition-all duration-300 backdrop-blur-sm border border-white/20">
+                      <!-- WhatsApp Business Badge - Hanya ditampilkan jika menggunakan WhatsApp Business -->
+                      <span v-if="pelaku.whatsapp_business === 'Ya'" class="inline-flex items-center px-2 py-1 rounded-full text-xs font-bold bg-gradient-to-r from-green-500 to-green-600 text-white shadow-lg transform hover:scale-105 transition-all duration-300 backdrop-blur-sm border border-white/20">
                         <svg class="w-3 h-3 mr-1" fill="currentColor" viewBox="0 0 24 24">
                           <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/>
                           <path d="M12 0C5.373 0 0 5.373 0 12s5.373 12 12 12 12-5.373 12-12S18.627 0 12 0zm0 22c-5.523 0-10-4.477-10-10S6.477 2 12 2s10 4.477 10 10-4.477 10-10 10z"/>
@@ -250,8 +250,8 @@
                 </div>
                 <div class="absolute inset-0 bg-gradient-to-t from-black/70 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-all duration-500"></div>
                 
-                <!-- WhatsApp Business Badge - Top Right Position - Tidak ditampilkan untuk Bu Endang -->
-                <div v-if="selectedPelaku?.nama !== 'Bu Endang' && selectedPelaku?.nama !== 'Bu Dwi Cahyani'" class="absolute top-2 sm:top-4 right-2 sm:right-4">
+                <!-- WhatsApp Business Badge - Top Right Position - Hanya ditampilkan jika menggunakan WhatsApp Business -->
+                <div v-if="selectedPelaku?.whatsapp_business === 'Ya'" class="absolute top-2 sm:top-4 right-2 sm:right-4">
                   <span class="inline-flex items-center px-2 py-1 sm:px-3 sm:py-2 rounded-full text-xs sm:text-sm font-bold bg-gradient-to-r from-green-500 to-green-600 text-white shadow-lg transform hover:scale-105 transition-all duration-300 backdrop-blur-sm border border-white/30 flex-shrink-0">
                     <svg class="w-3 h-3 sm:w-4 sm:h-4 mr-1" fill="currentColor" viewBox="0 0 24 24">
                       <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/>
@@ -313,7 +313,7 @@
                 
                 <!-- Contact with premium button -->
                 <div class="text-center pt-2">
-                  <a :href="'https://wa.me/' + selectedPelaku.kontak.replace(/\D/g, '')" target="_blank" class="inline-flex items-center px-6 py-3 bg-gradient-to-r from-green-500 via-green-600 to-green-700 text-white rounded-2xl hover:from-green-600 hover:via-green-700 hover:to-green-800 transition-all duration-300 shadow-xl hover:shadow-2xl transform hover:-translate-y-1 font-bold text-base relative overflow-hidden group">
+                  <a :href="'https://wa.me/' + getKontakByUsaha(selectedPelaku.usaha)" target="_blank" class="inline-flex items-center px-6 py-3 bg-gradient-to-r from-green-500 via-green-600 to-green-700 text-white rounded-2xl hover:from-green-600 hover:via-green-700 hover:to-green-800 transition-all duration-300 shadow-xl hover:shadow-2xl transform hover:-translate-y-1 font-bold text-base relative overflow-hidden group">
                     <span class="absolute inset-0 bg-gradient-to-r from-transparent via-white/30 to-transparent -translate-x-full group-hover:translate-x-full transition-transform duration-700"></span>
                     <svg class="w-5 h-5 mr-3 relative z-10" fill="currentColor" viewBox="0 0 24 24">
                       <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/>
@@ -500,6 +500,8 @@
 
 <script>
 import { ref, onMounted, onUnmounted, computed } from 'vue'
+import { collection, getDocs } from 'firebase/firestore'
+import { db } from '@/firebase/config'
 
 // Import all images
 import BalaiDesaJuronImage from '@/assets/img/BalaiDesaJuron.jpg'
@@ -644,7 +646,15 @@ export default {
 
     // Fungsi untuk mendapatkan kontak berdasarkan nama usaha
     const getKontakByUsaha = (usaha) => {
-      // Hardcoded list untuk menghindari referensi ke pelakuUMKM yang belum diinisialisasi
+      // Cari di data pelakuUMKM yang sudah diambil dari Firebase
+      const pelaku = pelakuUMKM.value.find(p => p.usaha === usaha)
+      
+      if (pelaku && pelaku.kontak) {
+        // Format nomor WhatsApp dengan menghapus semua karakter non-digit
+        return pelaku.kontak.replace(/\D/g, '')
+      }
+      
+      // Fallback ke hardcoded list jika tidak ditemukan di Firebase
       const pelakuList = [
         { usaha: 'Es Doger Kita', kontak: '+62 857 2261 3566' },
         { usaha: 'Dapur Bu Suprih', kontak: '+62 831 3966 0179' },
@@ -655,9 +665,9 @@ export default {
         { usaha: 'Nasi Goreng Putri Pak Jumino', kontak: '+62 823 2476 5191' },
       ]
       
-      const pelaku = pelakuList.find(p => p.usaha === usaha)
+      const pelakuFallback = pelakuList.find(p => p.usaha === usaha)
       // Default ke Ibu Tini jika tidak ditemukan
-      return pelaku ? pelaku.kontak.replace(/\D/g, '') : '6285722613566'
+      return pelakuFallback ? pelakuFallback.kontak.replace(/\D/g, '') : '6285722613566'
     }
 
     // Data produk dan pelaku UMKM
@@ -730,7 +740,8 @@ export default {
           deskripsi: 'Bu Tini menjual berbagai jajanan sederhana namun digemari banyak orang. Setiap hari, Bu Tini menawarkan donat lembut, aneka gorengan hangat seperti corndog, tempura, dll, serta aneka es seperti es doger, pop ice dan minuman sachet lain yang menyegarkan.',
           kontak: '+62 857 2261 3566',
           alamat: 'Desa Juron Rt 03, Rw 05',
-          usaha: 'Es Doger Kita'
+          usaha: 'Es Doger Kita',
+          whatsapp_business: 'Ya'
         },
         {
           id: 'ninik',
@@ -798,11 +809,102 @@ export default {
     const featuredProducts = ref([])
     const pelakuUMKM = ref([])
 
+    // Fungsi untuk fetch data UMKM dari Firebase
+    const fetchUMKMData = async () => {
+      try {
+        const querySnapshot = await getDocs(collection(db, 'pelaku_umkm'))
+        const umkmData = querySnapshot.docs.map(doc => ({
+          id: doc.id,
+          ...doc.data()
+        }))
+        
+        // Transform data untuk digunakan di template
+        pelakuUMKM.value = umkmData.map(item => ({
+          id: item.id,
+          nama: item.nama,
+          jenisUsaha: item.jenis_usaha,
+          foto: item.foto,
+          deskripsi: item.deskripsi,
+          kontak: item.kontak,
+          alamat: item.alamat,
+          usaha: item.usaha,
+          whatsapp_business: item.whatsapp_business || 'Tidak'
+        }))
+      } catch (error) {
+        console.error('Error fetching UMKM data:', error);
+        let errorMessage = 'Gagal memuat data UMKM: ';
+        
+        if (error.code === 'unavailable') {
+          errorMessage += 'Database tidak tersedia. Silakan coba lagi nanti.';
+        } else if (error.code === 'permission-denied') {
+          errorMessage += 'Tidak memiliki izin untuk mengakses data UMKM.';
+        } else if (error.code === 'not-found') {
+          errorMessage += 'Data UMKM tidak ditemukan.';
+        } else if (error.message) {
+          errorMessage += error.message;
+        } else {
+          errorMessage += 'Terjadi kesalahan yang tidak diketahui saat memuat data UMKM.';
+        }
+        
+        console.warn(errorMessage);
+        // Fallback ke data statis jika gagal
+        pelakuUMKM.value = shuffleArray(originalPelakuUMKM);
+      }
+    }
+
+    // Fungsi untuk fetch data Produk dari Firebase
+    const fetchProdukData = async () => {
+      try {
+        const querySnapshot = await getDocs(collection(db, 'produk_unggulan'))
+        const produkData = querySnapshot.docs.map(doc => ({
+          id: doc.id,
+          ...doc.data()
+        }))
+        
+        // Transform data untuk digunakan di template - hanya field yang digunakan
+        featuredProducts.value = produkData.map(item => ({
+          name: item.nama,
+          description: item.deskripsi,
+          price: item.harga || 'Hubungi untuk harga', // Default jika harga kosong
+          origin: item.usaha,
+          imageSrc: item.foto,
+          imageAlt: item.nama
+        }))
+      } catch (error) {
+        console.error('Error fetching produk data:', error);
+        let errorMessage = 'Gagal memuat data produk: ';
+        
+        if (error.code === 'unavailable') {
+          errorMessage += 'Database tidak tersedia. Silakan coba lagi nanti.';
+        } else if (error.code === 'permission-denied') {
+          errorMessage += 'Tidak memiliki izin untuk mengakses data produk.';
+        } else if (error.code === 'not-found') {
+          errorMessage += 'Data produk tidak ditemukan.';
+        } else if (error.message) {
+          errorMessage += error.message;
+        } else {
+          errorMessage += 'Terjadi kesalahan yang tidak diketahui saat memuat data produk.';
+        }
+        
+        console.warn(errorMessage);
+        // Fallback ke data statis jika gagal
+        featuredProducts.value = shuffleArray(originalProducts);
+      }
+    }
+
     // Mengacak data saat komponen dimuat
-    onMounted(() => {
-      // Mengacak produk dan pelaku UMKM
-      featuredProducts.value = shuffleArray(originalProducts)
-      pelakuUMKM.value = shuffleArray(originalPelakuUMKM)
+    onMounted(async () => {
+      // Fetch data dari Firebase terlebih dahulu
+      await fetchUMKMData()
+      await fetchProdukData()
+      
+      // Jika data dari Firebase kosong, gunakan data statis sebagai fallback
+      if (pelakuUMKM.value.length === 0) {
+        pelakuUMKM.value = shuffleArray(originalPelakuUMKM)
+      }
+      if (featuredProducts.value.length === 0) {
+        featuredProducts.value = shuffleArray(originalProducts)
+      }
       
       // Menambahkan event listener untuk scroll
       window.addEventListener('scroll', handleScrollAnimation)
@@ -824,7 +926,9 @@ export default {
       featuredProducts,
       pelakuUMKM,
       desaInfo,
-      balaiDesaImage // Force reference
+      balaiDesaImage, // Force reference
+      fetchUMKMData,
+      fetchProdukData
     }
   }
 }
@@ -901,12 +1005,6 @@ export default {
     min-height: 44px;
     min-width: 44px;
   }
-  
-  /* Better text wrapping for mobile */
-  .text-wrap-balance {
-    text-wrap: balance;
-  }
-  
   /* Improved spacing for mobile */
   .container-custom {
     padding-left: 1rem;
@@ -922,11 +1020,6 @@ export default {
   .modal-container {
     margin: 1rem;
     max-height: calc(100vh - 2rem);
-  }
-  
-  /* Better image loading experience */
-  img {
-    loading: lazy;
   }
   
   /* Smooth scrolling for mobile */
