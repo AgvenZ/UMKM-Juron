@@ -4,14 +4,14 @@ import { getFirestore } from 'firebase/firestore';
 import { getStorage } from 'firebase/storage';
 
 const firebaseConfig = {
-  apiKey: "AIzaSyCzIsSqZwufwT9GTEIKPOdZ_cSoXvzSyok",
-  authDomain: "umkm-juron.firebaseapp.com",
-  databaseURL: "https://umkm-juron-default-rtdb.asia-southeast1.firebasedatabase.app",
-  projectId: "umkm-juron",
-  storageBucket: "umkm-juron.firebasestorage.app",
-  messagingSenderId: "732405910071",
-  appId: "1:732405910071:web:4ec5b78f42aa5d37c20db2",
-  measurementId: "G-J4FBEVQ1D6"
+  apiKey: import.meta.env.VITE_FIREBASE_API_KEY,
+  authDomain: import.meta.env.VITE_FIREBASE_AUTH_DOMAIN,
+  databaseURL: import.meta.env.VITE_FIREBASE_DATABASE_URL,
+  projectId: import.meta.env.VITE_FIREBASE_PROJECT_ID,
+  storageBucket: import.meta.env.VITE_FIREBASE_STORAGE_BUCKET,
+  messagingSenderId: import.meta.env.VITE_FIREBASE_MESSAGING_SENDER_ID,
+  appId: import.meta.env.VITE_FIREBASE_APP_ID,
+  measurementId: import.meta.env.VITE_FIREBASE_MEASUREMENT_ID
 };
 
 const app = initializeApp(firebaseConfig);
