@@ -14,7 +14,9 @@
   "description": "",
   "dependencies": {
     "@vitejs/plugin-vue": "^4.3.4",
-    "vue": "^3.3.4"
+    "firebase": "^12.5.0",
+    "vue": "^3.3.4",
+    "vue-router": "^4.6.3"
   },
   "devDependencies": {
     "autoprefixer": "^10.4.14",
