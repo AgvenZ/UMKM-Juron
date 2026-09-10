@@ -1,5 +1,6 @@
 <template>
   <div>
+    <Navbar />
     <!-- Hero Section -->
     <section id="home" class="relative min-h-screen flex items-center pt-5 sm:pt-7">
       <div class="absolute inset-0 z-0 overflow-hidden">
@@ -502,6 +503,7 @@
 import { ref, onMounted, onUnmounted, computed } from 'vue'
 import { collection, getDocs } from 'firebase/firestore'
 import { db } from '@/firebase/config'
+import Navbar from '@/components/Navbar.vue'
 
 // Import all images
 import BalaiDesaJuronImage from '@/assets/img/BalaiDesaJuron.jpg'
@@ -526,6 +528,9 @@ import NuggetLeleImage from '@/assets/img/NuggetLele.jpg'
 import NasiGorengImage from '@/assets/img/NasiGoreng.jpg'
 export default {
   name: 'Home',
+  components: {
+    Navbar
+  },
   // Ensure images are included in build
   images: {
     BalaiDesaJuronImage,
